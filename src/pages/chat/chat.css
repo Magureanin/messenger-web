@@ -1,0 +1,241 @@
+/* chat.css */
+.app-container {
+  display: flex;
+  height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Стили для боковой панели */
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  background-color: #f0f0f0;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px;
+}
+
+.sidebar-actions button {
+  width: 100%;
+}
+
+.sidebar-header {
+  padding: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  background-color: #e0e0e0;
+}
+
+.contacts-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-item:hover {
+  background-color: #e9e9e9;
+  transform: translateX(5px);
+}
+
+.contact-item.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Новые classes для аватара и текста */
+.contact-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* Инверсия colors для активного контакта */
+.contact-item.active .contact-avatar {
+  background-color: white;
+  color: #007bff;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-name {
+  font-weight: bold;
+}
+
+.contact-status {
+  font-size: 12px;
+  color: #666;
+}
+
+.contact-item.active .contact-status {
+  color: #e0e0e0;
+}
+
+/* Стили для чата */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.messages-list {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.message {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  max-width: 70%;
+  transition: box-shadow 0.2s ease;
+}
+
+.message:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Разграничение цветами */
+.mine {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.theirs {
+  background-color: #cce5ff;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+.input-area {
+  display: flex;
+  padding: 8px;
+  border-top: 1px solid #ccc;
+  background-color: white;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.input-area button {
+  margin-left: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background-color: #0056b3;
+}
+
+button {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.logout-button {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff4d4d, #d32f2f);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(211, 47, 47, 0.3);
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #ff6666, #e53935);
+  box-shadow: 0 4px 8px rgba(211, 47, 47, 0.5);
+  transform: translateY(-2px);
+}
+
+.logout-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(211, 47, 47, 0.2);
+}
+
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-button {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.settings-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.settings-button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
