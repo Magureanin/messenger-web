@@ -57,7 +57,7 @@
     {/if}
 
     <footer class="sidebar-actions">
-      <button class="settings-button" onclick={() => alert('Открытие настроек...')}>Настройки</button>
+      <button class="settings-button" onclick={() => push('/settings')}>Настройки</button>      
       <button class="logout-button" onclick={chat.logout}>Выйти</button>
     </footer>
   </aside>
